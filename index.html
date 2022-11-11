@@ -662,17 +662,18 @@
           '(display-mode: standalone)'
         ).matches;
 
-        if (isInstalled) {
-          pwaUrl.search
-            ? document
-                .querySelector('.loader')
-                .style.setProperty('display', 'flex')
-            : document
-                .querySelector('.ready-to-unshortify')
-                .style.setProperty('display', 'flex');
+        if (!isInstalled) return;
+        if (!pwaUrl.search) {
+          document
+            .querySelector('.ready-to-unshortify')
+            .style.setProperty('display', 'flex');
+
+          return;
         }
 
-        if (!pwaUrl.search) return;
+        document
+          .querySelector('.loader')
+          .style.setProperty('display', 'flex');
 
         const args = parseArgs(pwaUrl);
         if (!args.url) return;
