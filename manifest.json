@@ -1,6 +1,6 @@
 {
-  "name": "Unshortify this YT video",
-  "short_name": "Unshortify this YT video",
+  "name": "Unshortify YT",
+  "short_name": "Unshortify YT",
   "start_url": "https://samulisuomi.github.io/youtube-unshortify-pwa/",
   "scope": "https://samulisuomi.github.io/youtube-unshortify-pwa/",
   "icons": [
@@ -22,8 +22,9 @@
     "action": "/youtube-unshortify-pwa/",
     "method": "GET",
     "enctype": "application/x-www-form-urlencoded",
-    "params":
-    {
+    "params": {
+      "title": "title",
+      "text": "text",
       "url": "url"
     }
   }
